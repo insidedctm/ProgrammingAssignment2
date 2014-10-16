@@ -22,15 +22,16 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## cacheSolve can be called with the "cached marix" returned
-## by makeCacheMatrix to return the inverse of the matrix.  
+## cacheSolve can be called with the "cached matrix" returned
+## by makeCacheMatrix.
+##
 ## The first time cacheSolve is called for a cached matrix
 ## a matrix 'solve' is called to generate the inverse. Subsequent
 ## calls will return a cached inverse rather than calling solve
 ## again.
 ## parameters: x - the cached matrix
 ##             ... - any other parameters to be passed to solve
-
+## returns: the inverse of the cached matrix
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         mtx <- x$getmatrix()
